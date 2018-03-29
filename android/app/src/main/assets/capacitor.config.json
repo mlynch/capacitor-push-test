@@ -1,0 +1,6 @@
+{
+  "appId": "com.getcapacitor.pushtest",
+  "appName": "CapacitorPushTest",
+  "bundledWebRuntime": true,
+  "webDir": "www"
+}

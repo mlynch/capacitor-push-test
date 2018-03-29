@@ -1,0 +1,33 @@
+PODS:
+  - Capacitor (1.0.0-alpha.30):
+    - CapacitorCordova (= 1.0.0-alpha.30)
+    - GCDWebServer (~> 3.0)
+  - CapacitorCordova (1.0.0-alpha.30)
+  - CapacitorPushNotifications (0.0.3):
+    - Capacitor
+  - GCDWebServer (3.4.2):
+    - GCDWebServer/Core (= 3.4.2)
+  - GCDWebServer/Core (3.4.2)
+
+DEPENDENCIES:
+  - Capacitor (from `../../node_modules/@capacitor/ios`)
+  - CapacitorCordova (from `../../node_modules/@capacitor/ios`)
+  - CapacitorPushNotifications (from `../../node_modules/capacitor-push-notifications/ios`)
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: ../../node_modules/@capacitor/ios
+  CapacitorCordova:
+    :path: ../../node_modules/@capacitor/ios
+  CapacitorPushNotifications:
+    :path: ../../node_modules/capacitor-push-notifications/ios
+
+SPEC CHECKSUMS:
+  Capacitor: 2b1c87a3902d5eedd0d7b0bba7bfc505f4e2c808
+  CapacitorCordova: d32d48b248c13af390ea8053eac0949ea3bf7bcf
+  CapacitorPushNotifications: 5285816918ab0547936038f59defb392996b8b02
+  GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
+
+PODFILE CHECKSUM: 26022561e0207d6e895584a954cb2dc8a22a2646
+
+COCOAPODS: 1.4.0
