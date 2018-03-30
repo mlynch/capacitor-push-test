@@ -3,7 +3,7 @@ PODS:
     - CapacitorCordova (= 1.0.0-alpha.30)
     - GCDWebServer (~> 3.0)
   - CapacitorCordova (1.0.0-alpha.30)
-  - CapacitorPushNotifications (0.0.14):
+  - CapacitorPushNotifications (0.0.15):
     - Capacitor
     - IonicNativePushNotifications
   - FirebaseAnalytics (4.1.0):
@@ -54,7 +54,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Capacitor: 2b1c87a3902d5eedd0d7b0bba7bfc505f4e2c808
   CapacitorCordova: d32d48b248c13af390ea8053eac0949ea3bf7bcf
-  CapacitorPushNotifications: 748291ddfead70e7d9aad722c6925794a437b019
+  CapacitorPushNotifications: 614ae7a64403f404637975648ece852824ff3b08
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
   FirebaseCore: b981f47e5254cbcfdeb483355300d743f6fcab2c
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
