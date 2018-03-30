@@ -51,29 +51,11 @@ window.customElements.define('capacitor-welcome', class extends HTMLElement {
     </style>
     <div>
       <capacitor-welcome-titlebar>
-        <h1>Capacitor</h1>
+        <h1>Capacitor Push Notifications</h1>
       </capacitor-welcome-titlebar>
       <main>
         <p>
-          Capacitor makes it easy to build powerful apps for the app stores, mobile web (Progressive Web Apps), and desktop, all
-          with a single code base.
-        </p>
-        <h2>Getting Started</h2>
-        <p>
-          You'll probably need a UI framework to build a full-featured app. Might we recommend
-          <a target="_blank" href="http://ionicframework.com/">Ionic</a>?
-        </p>
-        <p>
-          Visit <a href="http://ionic-team.github.io/capacitor">ionic-team.github.io/capacitor</a> for information
-          on using native features, building plugins, and more.
-        </p>
-        <a href="http://ionic-team.github.io/capacitor" target="_blank" class="button">Read more</a>
-        <h2>Tiny Demo</h2>
-        <p>
-          This demo shows how to call Capacitor plugins. Say cheese!
-        </p>
-        <p>
-          <button class="button" id="take-photo">Take Photo</button>
+          <button class="button" id="get-token">Get Token</button>
         </p>
         <p>
           <img id="image" style="max-width: 100%">
@@ -84,18 +66,18 @@ window.customElements.define('capacitor-welcome', class extends HTMLElement {
   }
 
   connectedCallback() {
-    this.shadowRoot.querySelector('#take-photo').addEventListener('click', async (e) => {
-      const { Camera } = Capacitor.Plugins;
-      const photo = await Camera.getPhoto({
-        resultType: "uri"
+    const { PushNotifications, Toast } = Capacitor.Plugins;
+    PushNotifications.addListener('pushOnToken', (token) => {
+      console.log('Got token', token);
+    });
+    PushNotifications.addListener('pushOnMessage', (data) => {
+      console.log('Push message data', data);
+    });
+    this.shadowRoot.querySelector('#get-token').addEventListener('click', async (e) => {
+      const token = await PushNotifications.getToken();
+      Toast.show({
+        text: token
       });
-
-      const image = this.shadowRoot.querySelector('#image');
-      if (!image) {
-        return;
-      }
-      
-      image.src = photo.webPath;
     })
   }
 });
