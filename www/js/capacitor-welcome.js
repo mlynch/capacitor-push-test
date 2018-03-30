@@ -57,8 +57,7 @@ window.customElements.define('capacitor-welcome', class extends HTMLElement {
         <p>
           <button class="button" id="get-token">Get Token</button>
         </p>
-        <p>
-          <img id="image" style="max-width: 100%">
+        <p id="message-output">
         </p>
       </main>
     </div>
@@ -72,11 +71,18 @@ window.customElements.define('capacitor-welcome', class extends HTMLElement {
     });
     PushNotifications.addListener('pushOnMessage', (data) => {
       console.log('Push message data', data);
+      var m = this.shadowRoot.querySelector('#message-output');
+      var d = document.createElement('div');
+      var date = +new Date;
+      var s = JSON.stringify(data);
+      d.innerHTML = `New message (${date}) - ${s}`
+      m.appendChild(d);
     });
     this.shadowRoot.querySelector('#get-token').addEventListener('click', async (e) => {
       const token = await PushNotifications.getToken();
+      console.log('Token', token.value);
       Toast.show({
-        text: token
+        text: token.value
       });
     })
   }
